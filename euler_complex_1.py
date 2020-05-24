@@ -1,5 +1,3 @@
-#! D:/Python_Projects/Pendulum/.venv/Scripts/python.exe
-
 import numpy as np
 import matplotlib.pyplot as plt 
 from matplotlib.widgets import Slider, Button 
