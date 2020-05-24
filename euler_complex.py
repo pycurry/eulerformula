@@ -10,10 +10,10 @@ def exp(th):
 
     X = [x.real for x in e]
     Y = [y.imag for y in e]
-    return e, X, Y
+    return X, Y
 
 th = 1
-e, X, Y = exp(th)
+X, Y = exp(th)
 
 fig, ax = plt.subplots()
 plt.subplots_adjust(bottom=0.30)
@@ -43,7 +43,7 @@ zoomval = Slider(zoom, 'Axes Limits', 1.5, 20, valinit=5, valstep=0.01)
 def update(value):
     th = sth.val
     zval = zoomval.val
-    e, X, Y = exp(th)
+    X, Y = exp(th)
     l1.set_xdata(X)
     l1.set_ydata(Y)
     p3.set_xdata(X[len(X)-1])
