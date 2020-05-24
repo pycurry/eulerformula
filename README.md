@@ -2,6 +2,6 @@
 Visualizing Euler's Formula using matplotlib
 
 # Requirements
-python3
-numpy
+python3\n
+numpy\n
 matplotlib
