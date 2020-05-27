@@ -6,7 +6,7 @@ def exp(th):
     e = [complex(1, 0)]
 
     for n in range(1, 20):
-        e.append(e[len(e)-1] + (complex(0, th)**n)/np.math.factorial(n))
+        e.append(e[-1] + (complex(0, th)**n)/np.math.factorial(n))
 
     X = [x.real for x in e]
     Y = [y.imag for y in e]
@@ -31,7 +31,7 @@ y1 = np.sin(angle)
 
 l1, = plt.plot(X, Y)
 l2, = plt.plot(x1, y1, '--')
-p3, = plt.plot(X[len(X)-1], Y[len(Y)-1], '.', color= 'k')
+p3, = plt.plot(X[-1], Y[-1], '.', color= 'k')
 
 axcolor = 'lightgoldenrodyellow'
 axth = plt.axes([0.2, 0.15, 0.65, 0.03], facecolor=axcolor)
@@ -46,8 +46,8 @@ def update(value):
     X, Y = exp(th)
     l1.set_xdata(X)
     l1.set_ydata(Y)
-    p3.set_xdata(X[len(X)-1])
-    p3.set_ydata(Y[len(Y)-1])
+    p3.set_xdata(X[-1])
+    p3.set_ydata(Y[-1])
     ax.axis([-zval, zval, -zval, zval])
     fig.canvas.draw_idle()
 
