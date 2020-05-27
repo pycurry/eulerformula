@@ -6,7 +6,7 @@ def exp(th):
     e = [complex(1, 0)]
 
     for n in range(1, 20):
-        e.append(e[len(e)-1] + (complex(0, th)**n)/np.math.factorial(n))
+        e.append(e[-1] + (complex(0, th)**n)/np.math.factorial(n))
 
     X = [x.real for x in e]
     Y = [y.imag for y in e]
@@ -40,7 +40,7 @@ y1 = np.sin(angle)
 
 l1, = ax[1].plot(X, Y)
 l2, = ax[1].plot(x1, y1, '--')
-p3, = ax[1].plot(X[len(X)-1], Y[len(Y)-1], '.', color= 'k')
+p3, = ax[1].plot(X[-1], Y[-1], '.', color= 'k')
 
 ax[0].axis([0, 5, 0, 10])
 ax[0]. axis('off')
@@ -63,8 +63,8 @@ def update(value):
     X, Y = exp(th)
     l1.set_xdata(X)
     l1.set_ydata(Y)
-    p3.set_xdata(X[len(X)-1])
-    p3.set_ydata(Y[len(Y)-1])
+    p3.set_xdata(X[-1])
+    p3.set_ydata(Y[-1])
     ax[1].axis([-zval, zval, -zval, zval])
     string1 = stringop(X, Y)
     text.set_text(r'$\sum_{i=0}^{20} \frac{i\theta^n}{n!}$'+'=\n' + string1)
